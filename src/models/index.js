@@ -6,10 +6,7 @@ const config = require('../core/config');
 const logger = require('../core/logger')('app');
 
 // Join the database connection string
-const connectionString = new URL(config.database.connection);
-connectionString.pathname += config.database.name;
-
-mongoose.connect(`${connectionString.toString()}`);
+mongoose.connect(config.database.connection);
 
 const db = mongoose.connection;
 db.once('open', () => {

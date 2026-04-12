@@ -16,3 +16,29 @@
 2. Create a new folder in `./src/api/components` (if needed). Remember to separate your codes to repositories, services, controllers, and routes.
 3. Add the new route in `./src/api/routes.js`.
 4. Test your new endpoints in the API client app.
+
+## Dokumentasi API Gacha (Kuis)
+
+## POST `/api/gacha`
+
+1. Fungsi: undian gacha (maksimal 5x sehari)
+1. Request Body (JSON): `{"user_id": "string_id_user"}`
+
+## GET `/api/gacha/history`
+
+1. Fungsi: Melihat riwayat gacha user
+2. Query Params / Body: `user_id=string_id_user`
+
+## GET `/api/gacha/prizes`
+
+1. Fungsi: Menampilkan daftar hadiah dan sisa kuota
+2. Parameter: Tidak perlu input
+
+## GET `/api/gacha/winners`
+
+1. Fungsi: Menampilkan daftar pemenang dengan nama disensor secara acak
+2. Parameter: Tidak perlu input
+
+## CATATAN
+
+Sebelum mencoba, pastikan di database collection `prizes` diisi hadiah terlebih dahulu secara manual dengan data awal agar undian tidak zonk terus terusan

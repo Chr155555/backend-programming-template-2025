@@ -6,7 +6,9 @@ const config = require('../core/config');
 const logger = require('../core/logger')('app');
 
 // Join the database connection string
-mongoose.connect(config.database.connection);
+mongoose.connect(process.env.DB_CONNECTION, {
+  dbName: process.env.DB_NAME,
+});
 
 const db = mongoose.connection;
 db.once('open', () => {
